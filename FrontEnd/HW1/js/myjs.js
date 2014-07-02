@@ -2,9 +2,11 @@ $(document).ready(function(){
 	$('#enterbutton').click(function(){
 		$('#startimg').hide();
 		$('#enterbutton').hide();
+		$('#enter').hide();
 		$('#header').fadeIn();
 		$('#about').hide();
 		$('#blog').hide();
+		$('#fe').hide();	
 		$('#content').fadeIn();
 		$('#footer').fadeIn();
 		$('#blogcontentfull').hide();
@@ -14,7 +16,8 @@ $(document).ready(function(){
 	$('#homepagebutton').click(function(){
 		$('#home').fadeIn();
 		$('#about').hide();
-		$('#blog').hide();	
+		$('#blog').hide();
+		$('#fe').hide();		
 		var img_src = "./img/bg.jpeg";
 		$("body").css("background-image", "url("+img_src+")");	
 	});
@@ -22,15 +25,26 @@ $(document).ready(function(){
 		$('#about').fadeIn();
 		$('#home').hide();
 		$('#blog').hide();
+		$('#fe').hide();
 		var img_src = "./img/bg.jpeg";
 		$("body").css("background-image", "url("+img_src+")");
 
 	});
+	$('#febutton').click(function(){
+		$('#fe').fadeIn();
+		$('#home').hide();
+		$('#blog').hide();
+		$('#about').hide();
+		var img_src = "./img/bg.jpeg";
+		$("body").css("background-image", "url("+img_src+")");
+
+	});	
 	$('#blogbutton').click(function(){
 		$('#blog').fadeIn();
 		$('#blogcontentfull').hide();
 		$('#about').hide();
 		$('#home').hide();
+		$('#fe').hide();
 		var img_src = "./img/bg.jpeg";
 		$("body").css("background-image", "url("+img_src+")");
 	});
@@ -40,6 +54,7 @@ $(document).ready(function(){
 		$('#blogcontentfull').hide();
 		$('#about').hide();
 		$('#home').hide();
+		$('#fe').hide();
 		var img_src = "./img/bg.jpeg";
 		$("body").css("background-image", "url("+img_src+")");
 	});	
@@ -47,6 +62,7 @@ $(document).ready(function(){
 		$('#blog').fadeIn();
 		$('#about').hide();
 		$('#home').hide();
+		$('#fe').hide();
 		$('#blogcontentfull').show();
 		$('#blogcontentpart').hide();
 		var img_src = "./img/bgnull.png";
@@ -64,6 +80,7 @@ $(document).ready(function(){
 		$('#blogcontentfull').hide();
 		$('#about').hide();
 		$('#home').hide();
+		$('#fe').hide();
 		var img_src = "./img/bg.jpeg";
 		$("body").css("background-image", "url("+img_src+")");
 	});	
