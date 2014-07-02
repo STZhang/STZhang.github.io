@@ -1,0 +1,114 @@
+body{  
+	font-family: 微软雅黑;
+	background-repeat: no-repeat;
+}
+
+#startimg{
+	padding-top: 10%;
+	padding-left: 30%;
+}
+
+#enterbutton{
+	height:80px;
+	padding-left: 50%;
+}
+
+#header{
+	font-family: Baskerville, Georgia, "Liberation Serif", "Kaiti SC", STKaiti, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW", "AR PL UKai TW MBE", "AR PL KaitiM GB", KaiTi, KaiTi_GB2312, TW\-Kai, serif;
+	color: black;
+	padding-top: 50px;
+	padding-left: 120px;
+	display: none;
+}
+
+#content{
+	padding-left: 200px;
+	padding-right: 200px;
+	padding-top: 50px;
+	display: none;
+}
+
+#footer{
+	font-family: Baskerville, Georgia, "Liberation Serif", "Kaiti SC", STKaiti, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW", "AR PL UKai TW MBE", "AR PL KaitiM GB", KaiTi, KaiTi_GB2312, TW\-Kai, serif;
+	padding-bottom: 20px;
+	padding-right: 200px;
+	float:right;
+	display: none;
+}
+
+.nav{
+	display: inline-block;
+	font-size: 27px;
+	padding-left: 35px;
+	padding-right: 35px;
+	cursor: pointer;
+}
+
+.nav:hover{
+	background-color: rgb(244,244,244);
+}
+
+.blogtitle{
+	margin: 14px 0;
+	color:#50585D;
+	font-size:30px;
+	line-height: 1.5em;
+	border-bottom: 1px solid #eee;
+	cursor: pointer;
+}
+
+.blogtitle:hover{
+	font-style:oblique; 
+}
+
+.blogclass{
+	color:#D5D5D5;
+}
+
+
+.blogtime{
+	color: #5f6f81;
+	font-weight: 600;
+}
+
+.blogcontent{
+	padding-top: 30px;
+	font-size: 18px;
+	line-height: 30px;
+}
+
+.watchmore{
+	font-style:oblique; 
+	color:#D5D5D5;
+}
+
+.watchmore:hover{
+	text-decoration:underline;
+}
+
+.return{
+	font-style:oblique; 
+	color:#D5D5D5;
+}
+
+.return:hover{
+	text-decoration:underline;
+}
+
+.description{
+	display: inline-block;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.title{
+	margin: 14px 0;
+	color:#50585D;
+	font-size:30px;
+	line-height: 1.5em;
+	border-bottom: 1px solid #eee;	
+	font-family: Baskerville, Georgia, "Liberation Serif", "Kaiti SC", STKaiti, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW", "AR PL UKai TW MBE", "AR PL KaitiM GB", KaiTi, KaiTi_GB2312, TW\-Kai, serif;
+}
+
+.inline{*display:inline;}
+.layout{zoom:1;display:inline-block;}
