@@ -43,8 +43,8 @@
 #comment{
 	padding-top: 460px;
 	color:white;
-	padding-left: 220px;
-	padding-right: 220px; 
+	padding-left: 155px;
+	padding-right: 155px; 
 	display: none;
 }
 
@@ -78,8 +78,8 @@
 
 .comments-item li{
 	padding-top: 20px;
-	padding-left: 100px;
-	padding-right: 100px;
+	padding-left: 50px;
+	padding-right: 50px;
 }
 .comments-username{
 	text-align: center;
@@ -91,7 +91,7 @@
 }
 
 .comments-content{
-	padding-left: 100px;
+	padding-left: 50px;
 	position: relative;
 	top: -85px;
 	font-size: 25px;
