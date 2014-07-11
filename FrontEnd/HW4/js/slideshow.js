@@ -38,6 +38,7 @@ $(document).ready(function(){
 				$.each(data, function(i, item) {
 					i = i + 1;
 					if(item.page == '1'){
+						alert("hehe");
 						$.each(item.comments, function(i, item){
 							i = i + 1;						
 							$(".comments-item").append("<li><div class='comments-part comments-username'><img src = '" + item.userimage + "'><div>" + item.user + "</div></div><div class='comments-part comments-content'>" + item.content + "</div></li>");
