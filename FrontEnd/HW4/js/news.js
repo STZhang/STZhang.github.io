@@ -7,9 +7,6 @@ $(document).ready(function(){
 	$("#pre").click(function(){		
 		if(parseInt(localStorage.page) > 1){
 			var currentpage = parseInt(localStorage.page) - 1;
-			$('.comments-item li').each(function(){
-			    $(this).remove();
-			}); 		
 			$.ajax({
 				//请求方式为get
 				type: "get",
@@ -23,7 +20,10 @@ $(document).ready(function(){
 					$.each(data, function(i, item) {
 						i = i + 1;
 						if(i == currentpage){
-							localStorage.page = i;
+							localStorage.page = i;											
+							$('.comments-item li').each(function(){
+							    $(this).remove();
+							}); 
 							$.each(item.comments, function(i, item){
 								i = i + 1;						
 								$(".comments-item").append("<li><div class='comments-part comments-username'><img src = '" + item.userimage + "'><div>" + item.user + "</div></div><div class='comments-part comments-content'>" + item.content + "</div></li>");
@@ -38,9 +38,6 @@ $(document).ready(function(){
 		if(parseInt(localStorage.page) < 2)
 		{
 			var currentpage = parseInt(localStorage.page) + 1;
-			$('.comments-item li').each(function(){
-			    $(this).remove();
-			}); 
 			$.ajax({
 				//请求方式为get
 				type: "get",
@@ -54,11 +51,14 @@ $(document).ready(function(){
 					$.each(data, function(i, item) {
 						i = i + 1;
 						if(i == currentpage){
-							localStorage.page = i;
+							localStorage.page = i;				
+							$('.comments-item li').each(function(){
+							    $(this).remove();
+							}); 
 							$.each(item.comments, function(i, item){
 								i = i + 1;						
 								$(".comments-item").append("<li><div class='comments-part comments-username'><img src = '" + item.userimage + "'><div>" + item.user + "</div></div><div class='comments-part comments-content'>" + item.content + "</div></li>");
-							})
+							})			
 						}
 					})
 				}
