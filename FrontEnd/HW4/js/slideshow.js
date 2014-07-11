@@ -29,6 +29,22 @@ $(document).ready(function(){
 			//请求方式为get
 			type: "get",
 			//json文件位置
+			url: "./data/news.json",
+			//返回数据格式为jsonp
+			dataType: "json",
+			//请求成功完成后要执行的方法
+			success: function(data) {
+				//使用$.each方法遍历返回的数据
+				$.each(data, function(i, item) {
+					i = i + 1;
+					$(".content").append("<div class='slide-item' style='left:" + (i-1)* 600 + "px'><img src='" + item.imageSrc + "'style='width:600px;'><div class='description'><p class='title'>" + item.title + "</p><p class='words'>" + item.content + "</p></div>");
+				})
+			}
+		});		
+		$.ajax({
+			//请求方式为get
+			type: "get",
+			//json文件位置
 			url: "./data/comments.json",
 			//返回数据格式为jsonp
 			dataType: "json",
