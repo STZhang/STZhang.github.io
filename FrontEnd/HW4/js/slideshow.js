@@ -37,7 +37,7 @@ $(document).ready(function(){
 				//使用$.each方法遍历返回的数据
 				$.each(data, function(i, item) {
 					i = i + 1;
-					$(".content").append("<div class='slide-item' style='left:" + (i-1)* 600 + "px'><img src='" + item.imageSrc + "'style='width:600px;'><div class='description'><p class='title'>" + item.title + "</p><p class='words'>" + item.content + "</p></div>");
+					$("#content").append("<div class='slide-item' style='left:" + (i-1) * 600 + "px'><img src='" + item.imageSrc + "'style='width:600px;'><div class='description'><p class='title'>" + item.title + "</p><p class='words'>" + item.content + "</p></div>");
 				})
 			}
 		});		
