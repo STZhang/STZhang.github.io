@@ -1,0 +1,42 @@
+[
+	{
+		"page":"1",
+		"comments":[
+			{
+				"user":"DA DI",
+				"userimage":"img/boy.jpg",
+				"content":"Comment AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA."
+			}, 
+			{
+				"user":"DA KE AI",
+				"userimage":"img/katong.jpg",
+				"content":"Comment AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA."
+			},  
+			{
+				"user":"DA DOU BI",
+				"userimage":"img/katong.jpg",
+				"content":"Comment AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA."
+			},  						     
+   		]
+	},
+	{
+		"page":"2",
+		"comments":[
+			{
+				"user":"TONG TONG",
+				"userimage":"img/boy.jpg",
+				"content":"Comment BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB."
+			}, 
+			{
+				"user":"RU GE",
+				"userimage":"img/katong.jpg",
+				"content":"Comment BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB."
+			},  
+			{
+				"user":"XIN YI",
+				"userimage":"img/katong.jpg",
+				"content":"Comment BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB."
+			},  						     
+   		]
+	},	
+]

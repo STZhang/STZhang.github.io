@@ -20,6 +20,8 @@ $(document).ready(function(){
 	$("#enter").click(function(){
 		$(".slideshow").hide();
 		$(".container").hide();
+		var storage = window.sessionStorage;
+		var value = storage.setItem("lastnum", i);
 	});
 
 
