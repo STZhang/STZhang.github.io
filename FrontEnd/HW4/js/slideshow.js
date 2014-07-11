@@ -14,7 +14,7 @@ $(document).ready(function(){
 			$.each(data, function(i, item) {
 				i = i + 1;
 				$(".slideshow").append($("<li><span>"+ i +"</span><div><h5>" + item.content + "</h5><h3>" + item.title + "</h3></div></li>"));
-				$(".slideshow ul li span").each(function(index){
+				$(".slideshow li span").each(function(index){
 					$(this).css("background-image", "url("+ imageSrc +")");
 				});
 			})
