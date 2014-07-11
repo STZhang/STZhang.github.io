@@ -15,6 +15,7 @@ $(document).ready(function(){
 				i = i + 1;
 				$(".slideshow").append($("<li><span style='background-image:url("+ item.imageSrc +")'>"+ i +"</span><div><h5>" + item.content + "</h5><h3>" + item.title + "</h3></div></li>"));
 			})
+
 		}
 	});
 	$("#enter").click(function(){
@@ -38,6 +39,7 @@ $(document).ready(function(){
 				$.each(data, function(i, item) {
 					i = i + 1;
 					$("#content").append("<div class='slide-item'><img src='" + item.imageSrc + "'style='width:600px;'><div class='description'><p class='title'>" + item.title + "</p><p class='words'>" + item.content + "</p></div>");
+					$('#content').slide();
 				})
 			}
 		});		
