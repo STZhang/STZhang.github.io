@@ -25,7 +25,7 @@ $(document).ready(function(){
 		$("#content").fadeIn();
 		$("#comment").fadeIn();	
 		$(".comments-item").hide();
-		var storage = window.sessionStorage;
+		var last = localStorage.LastView;
 		$.ajax({
 			//请求方式为get
 			type: "get",
@@ -40,7 +40,7 @@ $(document).ready(function(){
 					i = i + 1;
 					$("#content").append("<div class='slide-item'><img src='" + item.imageSrc + "'style='width:600px;'><div class='description'><p class='title'>" + item.title + "</p><p class='words'>" + item.content + "</p></div>");
 				})
-				$('#content').slide();
+				$('#content').slide({currentIndex:last});
 			}
 		});		
 		$.ajax({

@@ -16,11 +16,6 @@ $.fn.slide = function(options){
 		$.each(item, function(index, li){
 			mleft = (index - opts.currentIndex) * opts.width;
 			$('.slide-item:eq(' + index + ')').animate({left:mleft}, 500);
-			// if (mleft != 0) {
-			// 	$('.slide-item:eq(' + index + ')').hide();
-			// }else{
-			// 	$('.slide-item:eq(' + index + ')').show();
-			// };
 		});
 		$('.pagination li a').removeClass('active');
 		$('.pagination li a:eq(' + opts.currentIndex + ')').addClass('active');
@@ -29,12 +24,14 @@ $.fn.slide = function(options){
 	$('.next').click(function(){
 		opts.currentIndex++;
 		opts.currentIndex = opts.currentIndex % opts.num;
+		localStorage.LastView = opts.currentIndex;
 		update();
 	})
 
 	$('.previous').click(function(){
 		opts.currentIndex--;
 		opts.currentIndex = (opts.currentIndex + opts.num) % opts.num;
+		localStorage.LastView = opts.currentIndex;
 		update();
 	})
 
@@ -56,6 +53,7 @@ $.fn.slide = function(options){
 
 	$('.pagination li a').click(function(){
 		opts.currentIndex = $(this).text() - 1;
+		localStorage.LastView = opts.currentIndex;
 		update();
 	})
 
