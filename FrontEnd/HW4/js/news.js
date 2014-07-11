@@ -5,8 +5,11 @@ $(document).ready(function(){
 	});	
 
 	$("#pre").click(function(){		
-		var currentpage = localStorage.page;
-		currentpage = currentpage - 1;
+		var currentpage = localStorage.page - 1;
+		if(currentpage == 1)
+		{
+
+		}
 		$('.comments-item li').each(function(){
 		    $(this).remove();
 		}); 		
@@ -34,8 +37,7 @@ $(document).ready(function(){
 		});		
 	});
 	$("#next").click(function(){		
-		var currentpage = localStorage.page;
-		currentpage = currentpage + 1;
+		var currentpage = localStorage.page + 1;
 		$('.comments-item li').each(function(){
 		    $(this).remove();
 		}); 
