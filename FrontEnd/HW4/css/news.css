@@ -184,3 +184,25 @@ a:hover.stop {
 .pagination li a:hover {
   background-position: 0 -26px
 }
+
+#pre{
+	display: inline-block;
+	float: right;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: white;
+}
+
+#pre:hover{
+	font-style:oblique; 
+}
+
+#next{
+	display: inline-block;
+	float: right;
+	color: white;
+}
+
+#next:hover{
+	font-style:oblique; 
+}
