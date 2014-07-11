@@ -97,3 +97,89 @@
 	font-size: 25px;
 	font-family: Baskerville, Georgia, "Liberation Serif", "Kaiti SC", STKaiti, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW", "AR PL UKai TW MBE", "AR PL KaitiM GB", KaiTi, KaiTi_GB2312, TW\-Kai, serif;	
 }
+
+a.next,
+a.previous,
+a.play,
+a.stop {
+	background-image: url(../img/btns-next-prev.png);
+	background-repeat: no-repeat;
+	display:block;
+	width:12px;
+	height:18px;
+	overflow: hidden;
+	text-indent: -9999px;
+	float: left;
+	margin-right:5px;
+	position: relative;
+	top: 610px;
+	cursor: pointer;
+}
+
+a.next {
+  margin-right:10px;
+  background-position: -12px 0;
+}
+
+a:hover.next {
+  background-position: -12px -18px;
+}
+
+a.previous {
+  background-position: 0 0;
+}
+
+a:hover.previous {
+  background-position: 0 -18px;
+}
+
+a.play {
+  width:15px;
+  background-position: -25px 0;
+}
+
+a:hover.play {
+  background-position: -25px -18px;
+}
+
+a.stop {
+  width:18px;
+  background-position: -41px 0;
+}
+
+a:hover.stop {
+  background-position: -41px -18px;
+}
+
+.pagination {
+  margin: 7px 0 0;
+  float: right;
+  list-style: none;
+}
+
+.pagination li {
+  float: left;
+  margin: 0 1px;
+}
+
+.pagination li a {
+	display: block;
+	width: 13px;
+	height: 0;
+	padding-top: 13px;
+	background-image: url(../img/pagination.png);
+	background-position: 0 0;
+	float: left;
+	overflow: hidden;position: relative;
+	top: 610px;
+	cursor: pointer;
+}
+
+.pagination li a.active,
+.pagination li a:hover.active {
+  background-position: 0 -13px
+}
+
+.pagination li a:hover {
+  background-position: 0 -26px
+}

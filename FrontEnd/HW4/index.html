@@ -6,9 +6,6 @@
         <title>News</title>
         <link rel="stylesheet" type="text/css" href="css/slideshow.css" />
         <link rel="stylesheet" type="text/css" href="css/news.css" />
-		<script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/slideshow.js"></script>
-        <script type="text/javascript" src="js/news.js"></script>
     </head>
     <body>
         <ul class="slideshow">
@@ -39,11 +36,30 @@
             <div class="slide-item" style="left:3000px">
                 <img src="./img/12.jpg" style="width:600px;">
             </div>
+            <a class="previous"></a>
+            <a class="next"></a>
+            <a class="play"></a>
+            <a class="stop" style="display:none"></a>
+            <ul class="pagination">
+                <li><a>1</a></li>
+                <li><a>2</a></li>
+                <li><a>3</a></li>
+                <li><a>4</a></li>
+                <li><a>5</a></li>
+                <li><a>6</a></li>
+            </ul>
         </div>
         <div id="comment">
             <div id="comments">Comments<div id="view">View Comments>></div></div>
             <ul class="comments-item">
             </ul>
         </div>
-    </body>
+    </body>    
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/slideshow.js"></script>
+    <script type="text/javascript" src="js/news.js"></script>
+    <script type="text/javascript" src="js/jquery.slide.js"></script>
+    <script type="text/javascript">
+        $('#content').slide();
+    </script>
 </html>
