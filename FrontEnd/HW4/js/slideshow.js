@@ -21,9 +21,9 @@ $(document).ready(function(){
 		$(".slideshow").hide();
 		$(".container").hide();
 		$("#header").fadeIn();
-		$("#comment").fadeIn();	
-		$("#comments-item").hide();
 		$("#content").fadeIn();
+		$("#comment").fadeIn();	
+		$(".comments-item").hide();
 		var storage = window.sessionStorage;
 	});
 });
