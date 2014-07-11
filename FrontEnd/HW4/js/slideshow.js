@@ -37,7 +37,7 @@ $(document).ready(function(){
 				//使用$.each方法遍历返回的数据
 				$.each(data, function(i, item) {
 					i = i + 1;
-					if(i == '1'){
+					if(i == 1){
 						alert("hehe");
 						$.each(item.comments, function(i, item){
 							i = i + 1;						
