@@ -13,7 +13,7 @@ $(document).ready(function(){
 			//使用$.each方法遍历返回的数据
 			$.each(data, function(i, item) {
 				i = i + 1;
-				$(".slideshow").append($("<li><span style='background-image:url("+ item.imageSrc +")'"+ +">"+ i +"</span><div><h5>" + item.content + "</h5><h3>" + item.title + "</h3></div></li>"));
+				$(".slideshow").append($("<li><span style='background-image:url("+ item.imageSrc +")'>"+ i +"</span><div><h5>" + item.content + "</h5><h3>" + item.title + "</h3></div></li>"));
 			})
 		}
 	});
