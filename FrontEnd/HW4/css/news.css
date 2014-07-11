@@ -39,6 +39,8 @@
 }			
 .description .words{
 	font-size: 16px;
+	position: relative;
+	top: -30px;
 }
 
 #comment{
@@ -115,6 +117,7 @@ a.stop {
 	position: relative;
 	top: 475px;
 	cursor: pointer;
+	z-index: 100;
 }
 
 a.next {
@@ -174,6 +177,7 @@ a:hover.stop {
 	overflow: hidden;position: relative;
 	top: 475px;
 	cursor: pointer;
+	z-index: 100;
 }
 
 .pagination li a.active,
@@ -191,6 +195,7 @@ a:hover.stop {
 	padding-left: 20px;
 	padding-right: 20px;
 	color: white;
+	cursor: pointer;
 }
 
 #pre:hover{
@@ -201,6 +206,7 @@ a:hover.stop {
 	display: inline-block;
 	float: right;
 	color: white;
+	cursor: pointer;
 }
 
 #next:hover{
