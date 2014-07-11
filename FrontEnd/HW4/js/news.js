@@ -5,8 +5,8 @@ $(document).ready(function(){
 	});	
 
 	$("#pre").click(function(){		
-		if(localStorage.page > 1){
-			var currentpage = localStorage.page - 1;
+		if(parseInt(localStorage.page) > 1){
+			var currentpage = parseInt(localStorage.page) - 1;
 			$('.comments-item li').each(function(){
 			    $(this).remove();
 			}); 		
@@ -35,9 +35,9 @@ $(document).ready(function(){
 		}	
 	});
 	$("#next").click(function(){		
-		if(localStorage.page < 2)
+		if(parseInt(localStorage.page) < 2)
 		{
-			var currentpage = localStorage.page + 1;
+			var currentpage = parseInt(localStorage.page) + 1;
 			$('.comments-item li').each(function(){
 			    $(this).remove();
 			}); 
