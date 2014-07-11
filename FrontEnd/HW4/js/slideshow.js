@@ -21,10 +21,9 @@ $(document).ready(function(){
 		$(".slideshow").hide();
 		$(".container").hide();
 		$("#header").fadeIn();
-		$("#comment").fadeIn();
+		$("#comment").fadeIn();	
+		$("#comments-item").hide();
 		$("#content").fadeIn();
 		var storage = window.sessionStorage;
 	});
-
-
 });
