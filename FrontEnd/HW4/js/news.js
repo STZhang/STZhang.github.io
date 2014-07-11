@@ -6,7 +6,7 @@ $(document).ready(function(){
 
 	$("#pre").click(function(){		
 		var currentpage = localStorage.page;
-		currentpage -= 1;
+		currentpage = currentpage - 1;
 		$('.comments-item li').each(function(){
 		    $(this).remove();
 		}); 		
@@ -35,7 +35,7 @@ $(document).ready(function(){
 	});
 	$("#next").click(function(){		
 		var currentpage = localStorage.page;
-		currentpage += 1;
+		currentpage = currentpage + 1;
 		$('.comments-item li').each(function(){
 		    $(this).remove();
 		}); 
