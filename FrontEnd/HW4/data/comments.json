@@ -5,17 +5,17 @@
 			{
 				"user":"DA DI",
 				"userimage":"img/boy.jpg",
-				"content":"Comment AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA."
+				"content":"I love it."
 			}, 
 			{
 				"user":"DA KE AI",
 				"userimage":"img/katong.jpg",
-				"content":"Comment AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA."
+				"content":"It's beautiful."
 			},  
 			{
 				"user":"DA DOU BI",
 				"userimage":"img/katong.jpg",
-				"content":"Comment AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA."
+				"content":"Haha:)"
 			}						     
    		]
 	},
@@ -25,17 +25,17 @@
 			{
 				"user":"TONG TONG",
 				"userimage":"img/boy.jpg",
-				"content":"Comment BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB."
+				"content":"I love it."
 			}, 
 			{
 				"user":"RU GE",
 				"userimage":"img/katong.jpg",
-				"content":"Comment BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB."
+				"content":"Haha:)"
 			},  
 			{
 				"user":"XIN YI",
 				"userimage":"img/katong.jpg",
-				"content":"Comment BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB."
+				"content":"It's beautiful."
 			} 						     
    		]
 	}

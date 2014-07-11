@@ -150,20 +150,21 @@ div,ul,h1,h2,h3,h4,h5,h6{
 {
 0%   {	    
 	opacity: 0;
+    -webkit-transform: scale(1.05);
 	-webkit-animation-timing-function: ease-in;
 }
 8%  {
     opacity: 1;
-    -webkit-transform: scale(1.05);
+    -webkit-transform: scale(1.1);
     -webkit-animation-timing-function: ease-out;
 }
 16%  {
     opacity: 1;
-    -webkit-transform: scale(1.1) rotate(3deg);	
+    -webkit-transform: scale(1.15) rotate(3deg);	
 }
 24%{
     opacity: 0;
-    -webkit-transform: scale(1.1) rotate(3deg);	
+    -webkit-transform: scale(1.15) rotate(3deg);	
 }
 100% {
 	opacity:0;
