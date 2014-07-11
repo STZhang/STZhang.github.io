@@ -1,0 +1,38 @@
+[
+	{
+		"news-id":"1",
+		"title":"Lion",
+		"imageSrc":"img/7.jpg",
+		"content":"Night is full of danger in wild world."
+	},
+	{
+		"news-id":"2",
+		"title":"Glamour",
+		"imageSrc":"img/8.jpg",
+		"content":"The magical glamour of nature could be a moment, or an eternity."
+	},
+	{
+		"news-id":"3",
+		"title":"Attraction",
+		"imageSrc":"img/9.jpg",
+		"content":"There is no word for describing such scenary."
+	},
+	{
+		"news-id":"4",
+		"title":"Quietude",
+		"imageSrc":"img/10.jpg",
+		"content":"All we want is quietude like that."
+	},
+	{
+		"news-id":"5",
+		"title":"Energy",
+		"imageSrc":"img/11.jpg",
+		"content":"Elephants migrate altitudinally with season."
+	},		
+	{
+		"news-id":"6",
+		"title":"Beauty",
+		"imageSrc":"img/12.jpg",
+		"content":"It is a miracle to capture this moment."
+	}
+]
