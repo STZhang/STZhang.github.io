@@ -206,3 +206,7 @@ a:hover.stop {
 #next:hover{
 	font-style:oblique; 
 }
+
+#footer{
+	display: none;
+}
