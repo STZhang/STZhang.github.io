@@ -93,36 +93,30 @@ div,ul,h1,h2,h3,h4,h5,h6{
 
 .slideshow li:nth-child(1) span
 {
-	background-image: url('../img/7.jpg');
 }
 
 .slideshow li:nth-child(2) span
 {
-	background-image: url('../img/8.jpg');
 	-webkit-animation-delay:6s;
 }
 
 .slideshow li:nth-child(3) span
 {
-	background-image: url('../img/9.jpg');
 	-webkit-animation-delay:12s;
 }
 
 .slideshow li:nth-child(4) span
 {
-	background-image: url('../img/10.jpg');
 	-webkit-animation-delay:18s;
 }
 
 .slideshow li:nth-child(5) span
 {
-	background-image: url('../img/11.jpg');
 	-webkit-animation-delay:24s;
 }
 
 .slideshow li:nth-child(6) span
 {
-	background-image: url('../img/12.jpg');
 	-webkit-animation-delay:30s;
 }
 
