@@ -25,5 +25,27 @@ $(document).ready(function(){
 		$("#comment").fadeIn();	
 		$(".comments-item").hide();
 		var storage = window.sessionStorage;
+		$.ajax({
+			//请求方式为get
+			type: "get",
+			//json文件位置
+			url: "./data/comments.json",
+			//返回数据格式为jsonp
+			dataType: "json",
+			//请求成功完成后要执行的方法
+			success: function(data) {
+				//使用$.each方法遍历返回的数据
+				$.each(data, function(i, item) {
+					i = i + 1;
+					if(item.page == '1'){
+						$.each(item.comments, function(i, item)){						
+							$(".comments-item").append("<li>
+	                <div class='comments-part comments-username'><img src = '" + item.userimage + "'><div>" + item.user + "</div></div>
+	                <div class='comments-part comments-content'>" + item.content + "</div></li>");
+						}
+					}
+				})
+			}
+		});		
 	});
 });
