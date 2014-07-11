@@ -10,6 +10,7 @@
 	padding-right: 200px;
 	padding-top: 50px;
 	display: none;
+	width: 600px;
 }
 
 .nav{
@@ -171,7 +172,7 @@ a:hover.stop {
 	background-position: 0 0;
 	float: left;
 	overflow: hidden;position: relative;
-	top: 610px;
+	top: 475px;
 	cursor: pointer;
 }
 
