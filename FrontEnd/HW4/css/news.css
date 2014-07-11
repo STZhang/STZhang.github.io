@@ -41,7 +41,7 @@
 }
 
 #comment{
-	padding-top: 460px;
+	padding-top: 500px;
 	color:white;
 	padding-left: 155px;
 	padding-right: 155px; 
@@ -112,7 +112,7 @@ a.stop {
 	float: left;
 	margin-right:5px;
 	position: relative;
-	top: 610px;
+	top: 475px;
 	cursor: pointer;
 }
 
