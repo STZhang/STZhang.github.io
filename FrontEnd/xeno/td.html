@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>塔防</title>
+	<link href="css/app.css" rel="stylesheet" type="text/css" media="screen"/>
+	<style type="text/css">
+	</style>
+</head>
+
+<body>
+	<div id="init">
+		<h1>Tower Defense</h1>
+		<ul>
+		<li class="blueButton" id="startButton">START</a>
+		<li class="blueButton">HELP</a>
+		<ul>
+	</div>	
+	<div id="wrapper">
+		<h1>Tower Defense</h1>
+		<div id="board">
+			<canvas id="canvas" style="opacity:1;-moz-opacity:1;-khtml-opacity:1;filter:alpha(Opacity=10);"/>
+		</div>
+	</div>
+	<img id="monster_img" src="images/monster.png" style="display:none"/>	
+	<img id="map_img" src="images/map.bmp" style="display:none"/>	
+	<img id="fire_img" src="images/bullets/1.png" style="display:none"/>	
+	<img id="tanks_1" src="images/tanks/1.png" style="display:none"/>
+	<img id="tanks_2" src="images/tanks/2.png" style="display:none"/>
+	<img id="tanks_3" src="images/tanks/3.png" style="display:none"/>
+	<img id="tanks_4" src="images/tanks/5.png" style="display:none"/>
+	<img id="tanks_5" src="images/tanks/4.png" style="display:none"/>
+	<img id="tanks_7" src="images/tanks/6.png" style="display:none"/>
+	<img id="types_1" src="images/types/1.png" style="display:none"/>
+	<img id="types_2" src="images/types/2.png" style="display:none"/>
+	<img id="types_3" src="images/types/3.png" style="display:none"/>
+	<img id="types_4" src="images/types/4.png" style="display:none"/>
+	<img id="types_5" src="images/types/5.png" style="display:none"/>
+	<img id="types_6" src="images/types/6.png" style="display:none"/>
+	<img id="types_7" src="images/tanks/6.png" style="display:none"/>
+	<img id="explode_1" src="images/explode/5_10.png" style="display:none"/>	
+	<img id="explode_2" src="images/explode/5_9.png" style="display:none"/>	
+	<img id="explode_3" src="images/explode/5_8.png" style="display:none"/>	
+	<img id="explode_4" src="images/explode/5_7.png" style="display:none"/>	
+	<img id="explode_5" src="images/explode/5_6.png" style="display:none"/>	
+	<img id="explode_6" src="images/explode/5_5.png" style="display:none"/>	
+	<img id="explode_7" src="images/explode/5_4.png" style="display:none"/>	
+	<img id="explode_8" src="images/explode/5_3.png" style="display:none"/>	
+	<img id="explode_9" src="images/explode/5_2.png" style="display:none"/>	
+	<img id="explode_10" src="images/explode/5_1.png" style="display:none"/>	
+	<img id="frozen_1" src="images/explode/3_3.png" style="display:none"/>	
+	<img id="frozen_2" src="images/explode/3_3.png" style="display:none"/>	
+	<img id="frozen_3" src="images/explode/3_2.png" style="display:none"/>	
+	<img id="frozen_4" src="images/explode/3_2.png" style="display:none"/>	
+	<img id="frozen_5" src="images/explode/3_1.png" style="display:none"/>	
+	<img id="frozen_6" src="images/explode/3_1.png" style="display:none"/>	
+	<img id="frozen_7" src="images/explode/3_2.png" style="display:none"/>	
+	<img id="frozen_8" src="images/explode/3_2.png" style="display:none"/>	
+	<img id="frozen_9" src="images/explode/3_3.png" style="display:none"/>	
+	<img id="frozen_10" src="images/explode/3_3.png" style="display:none"/>	
+	<img id="frozen_11" src="images/explode/3_2.png" style="display:none"/>	
+	<img id="frozen_12" src="images/explode/3_2.png" style="display:none"/>	
+	<img id="frozen_13" src="images/explode/3_1.png" style="display:none"/>	
+	<img id="frozen_14" src="images/explode/3_1.png" style="display:none"/>	
+ 	<img id="ball_1" src="images/explode/4_24.png" style="display:none"/>	
+	<img id="ball_2" src="images/explode/4_23.png" style="display:none"/>	
+	<img id="ball_3" src="images/explode/4_22.png" style="display:none"/>	
+	<img id="ball_4" src="images/explode/4_21.png" style="display:none"/>	
+	<img id="ball_5" src="images/explode/4_20.png" style="display:none"/>	
+	<img id="ball_6" src="images/explode/4_19.png" style="display:none"/>	
+	<img id="ball_7" src="images/explode/4_18.png" style="display:none"/>	
+	<img id="ball_8" src="images/explode/4_17.png" style="display:none"/>	
+	<img id="ball_9" src="images/explode/4_16.png" style="display:none"/>	
+	<img id="ball_10" src="images/explode/4_15.png" style="display:none"/>	
+	<img id="ball_11" src="images/explode/4_14.png" style="display:none"/>	
+	<img id="ball_12" src="images/explode/4_13.png" style="display:none"/>	
+	<img id="ball_13" src="images/explode/4_12.png" style="display:none"/>	
+	<img id="ball_14" src="images/explode/4_11.png" style="display:none"/>	
+	<img id="ball_15" src="images/explode/4_10.png" style="display:none"/>	
+	<img id="ball_16" src="images/explode/4_9.png" style="display:none"/>	
+	<img id="ball_17" src="images/explode/4_8.png" style="display:none"/>	
+	<img id="ball_18" src="images/explode/4_7.png" style="display:none"/>	
+	<img id="ball_19" src="images/explode/4_6.png" style="display:none"/>	
+	<img id="ball_20" src="images/explode/4_5.png" style="display:none"/>	
+	<img id="ball_21" src="images/explode/4_4.png" style="display:none"/>	
+	<img id="ball_22" src="images/explode/4_3.png" style="display:none"/>	
+	<img id="ball_23" src="images/explode/4_2.png" style="display:none"/>	
+	<img id="ball_24" src="images/explode/4_1.png" style="display:none"/>	
+	<img id="dead_1" src="images/explode/6_12.png" style="display:none"/>	
+	<img id="dead_2" src="images/explode/6_11.png" style="display:none"/>	
+	<img id="dead_3" src="images/explode/6_10.png" style="display:none"/>	
+	<img id="dead_4" src="images/explode/6_9.png" style="display:none"/>	
+	<img id="dead_5" src="images/explode/6_8.png" style="display:none"/>	
+	<img id="dead_6" src="images/explode/6_7.png" style="display:none"/>	
+	<img id="dead_7" src="images/explode/6_6.png" style="display:none"/>	
+	<img id="dead_8" src="images/explode/6_5.png" style="display:none"/>	
+	<img id="dead_9" src="images/explode/6_4.png" style="display:none"/>	
+	<img id="dead_10" src="images/explode/6_3.png" style="display:none"/>	
+	<img id="dead_11" src="images/explode/6_2.png" style="display:none"/>	
+	<img id="dead_12" src="images/explode/6_1.png" style="display:none"/>	
+	<img id="bullet1_1" src="images/bullets/2_1.png" style="display:none"/>
+	<img id="bullet1_2" src="images/bullets/2_2.png" style="display:none"/>
+	<img id="bullet2" src="images/bullets/5.png" style="display:none"/>
+<script type="text/javascript" src="js/controls/main.js"></script>
+<script type="text/javascript" src="js/algorithms/util.js"></script>
+<script type="text/javascript" src="js/objects/bullet.js"></script>
+<script type="text/javascript" src="js/objects/button.js"></script>
+<script type="text/javascript" src="js/settings/data.js"></script>
+<script type="text/javascript" src="js/objects/object.js"></script>
+<script type="text/javascript" src="js/objects/explode.js"></script>
+<script type="text/javascript" src="js/objects/game_over.js"></script>
+<script type="text/javascript" src="js/controls/event.js"></script>
+<script type="text/javascript" src="js/objects/grid.js"></script>
+<script type="text/javascript" src="js/objects/map.js"></script>
+<script type="text/javascript" src="js/objects/mask.js"></script>
+<script type="text/javascript" src="js/objects/monster.js"></script>
+<script type="text/javascript" src="js/settings/monster_attr.js"></script>
+<script type="text/javascript" src="js/controls/msg.js"></script>
+<script type="text/javascript" src="js/objects/panel.js"></script>
+<script type="text/javascript" src="js/controls/render.js"></script>
+<script type="text/javascript" src="js/objects/select.js"></script>
+<script type="text/javascript" src="js/settings/stage.js"></script>
+<script type="text/javascript" src="js/objects/tank.js"></script>
+<script type="text/javascript" src="js/settings/tank_attr.js"></script>
+<script type="text/javascript" src="js/objects/tip.js"></script>
+<script type="text/javascript" src="js/algorithms/walk.js"></script>
+<script type="text/javascript" src="js/init/jquery.min.js"></script>
+
+<!--<script type="text/javascript" src="td-pkg-min.js?fmts=1"></script>-->
+<script type="text/javascript">
+	window.onload = function () {
+		$("#startButton").click(function(){
+			var img_src = "./images/board.png";
+			$("body").css("background-image", "url("+img_src+")");
+			$("body").css("background-repeat", "no-repeat");
+			$("body").css("background-position", "center");
+			$("header").show();
+			$("#wrapper").show();
+			$("#init").hide();
+			document.getElementById("board").style.display = "block";
+			app.init("board", true);
+		});
+	};
+</script>
+</body>
+</html>
