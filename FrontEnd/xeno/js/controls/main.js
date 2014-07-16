@@ -72,13 +72,13 @@ var app = {
 				this.canvas.onmousemove = function (e) {
 					var xy = _this.getEventXY.call(_this, e);
 					settings = env.defaultSettings();
-					xy[1] += settings.grid_size / 2;
+					xy[1] += settings.grid_size * 3 / 2;
 					_this.hover(xy[0], xy[1]);
 				};
 				this.canvas.onclick = function (e) {
 					var xy = _this.getEventXY.call(_this, e);
 					settings = env.defaultSettings();
-					xy[1] += settings.grid_size / 2;
+					xy[1] += settings.grid_size * 3 / 2;
 					_this.click(xy[0], xy[1]);
 				};
 
