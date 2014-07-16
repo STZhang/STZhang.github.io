@@ -247,7 +247,33 @@ app.todo.push(function (env) {
 		 */
 		fire: function () {
 			if (!this.target || !this.target.valid) return;
-
+			switch(this.type)
+			{
+			case "cannon":				
+				var audio = document.getElementById("cannon"); 
+				audio.play();
+				break;
+			case "LMG":				
+				var audio = document.getElementById("LMG"); 
+				audio.play();
+				break;
+			case "HMG":				
+				var audio = document.getElementById("HMG"); 
+				audio.play();
+				break;	
+			case "ball":				
+				var audio = document.getElementById("ball"); 
+				audio.play();
+				break;	
+			case "frozen":				
+				var audio = document.getElementById("frozen"); 
+				audio.play();
+				break;	
+			case "laser_gun":				
+				var audio = document.getElementById("laser_gun"); 
+				audio.play();
+				break;					
+			}
 			if (this.type == "laser_gun" || this.type == 'LMG') {
 				// 如果是激光枪，目标立刻被击中
 				this.target.beHit(this, this.damage);
