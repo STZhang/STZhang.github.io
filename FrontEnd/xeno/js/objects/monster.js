@@ -282,65 +282,7 @@ app.todo.push(function (env) {
 			this.cy = grid.cy;
 
 			this.grid.scene.addElement(this);
-			switch(this.pic)
-			{
-			case 1:				
-				var audio = document.getElementById("monster1"); 
-				audio.play();
-				break;
-			case 2:				
-				var audio = document.getElementById("monster2"); 
-				audio.play();
-				break;
-			case 3:				
-				var audio = document.getElementById("monster3"); 
-				audio.play();
-				break;	
-			case 4:				
-				var audio = document.getElementById("monster4"); 
-				audio.play();
-				break;	
-			case 5:				
-				var audio = document.getElementById("monster5"); 
-				audio.play();
-				break;	
-			case 6:				
-				var audio = document.getElementById("monster6"); 
-				audio.play();
-				break;	
-			case 7:				
-				var audio = document.getElementById("monster7"); 
-				audio.play();
-				break;	
-			case 8:				
-				var audio = document.getElementById("monster8"); 
-				audio.play();
-				break;
-			case 9:				
-				var audio = document.getElementById("monster9"); 
-				audio.play();
-				break;
-			case 10:				
-				var audio = document.getElementById("monster10"); 
-				audio.play();
-				break;	
-			case 11:				
-				var audio = document.getElementById("monster11"); 
-				audio.play();
-				break;	
-			case 12:				
-				var audio = document.getElementById("monster12"); 
-				audio.play();
-				break;	
-			case 13:				
-				var audio = document.getElementById("monster13"); 
-				audio.play();
-				break;	
-			case 14:				
-				var audio = document.getElementById("monster14"); 
-				audio.play();
-				break;	
-			}
+			
 		},
 
 		/**
@@ -452,7 +394,65 @@ app.todo.push(function (env) {
 			}
 			if (!this.next_grid) {
 				this.getNextGrid();
-
+				switch(this.pic)
+				{
+				case 1:				
+					var audio = document.getElementById("monster1"); 
+					audio.play();
+					break;
+				case 2:				
+					var audio = document.getElementById("monster2"); 
+					audio.play();
+					break;
+				case 3:				
+					var audio = document.getElementById("monster3"); 
+					audio.play();
+					break;	
+				case 4:				
+					var audio = document.getElementById("monster4"); 
+					audio.play();
+					break;	
+				case 5:				
+					var audio = document.getElementById("monster5"); 
+					audio.play();
+					break;	
+				case 6:				
+					var audio = document.getElementById("monster6"); 
+					audio.play();
+					break;	
+				case 7:				
+					var audio = document.getElementById("monster7"); 
+					audio.play();
+					break;	
+				case 8:				
+					var audio = document.getElementById("monster8"); 
+					audio.play();
+					break;
+				case 9:				
+					var audio = document.getElementById("monster9"); 
+					audio.play();
+					break;
+				case 10:				
+					var audio = document.getElementById("monster10"); 
+					audio.play();
+					break;	
+				case 11:				
+					var audio = document.getElementById("monster11"); 
+					audio.play();
+					break;	
+				case 12:				
+					var audio = document.getElementById("monster12"); 
+					audio.play();
+					break;	
+				case 13:				
+					var audio = document.getElementById("monster13"); 
+					audio.play();
+					break;	
+				case 14:				
+					var audio = document.getElementById("monster14"); 
+					audio.play();
+					break;	
+				}
 				/**
 				 * 如果依旧找不着下一步可去的格子，说明当前怪物被阻塞了
 				 */
