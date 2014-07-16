@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <audio src="./music/BGMusic.mp3" id="BGMusic" loop="loop"></audio>
 	<div id="init">
 		<h1>Tower Defense</h1>
 		<ul>
@@ -125,22 +126,7 @@
 <script type="text/javascript" src="js/objects/tip.js"></script>
 <script type="text/javascript" src="js/algorithms/walk.js"></script>
 <script type="text/javascript" src="js/init/jquery.min.js"></script>
+<script type="text/javascript" src="js/init/init.js"></script>
 
-<!--<script type="text/javascript" src="td-pkg-min.js?fmts=1"></script>-->
-<script type="text/javascript">
-	window.onload = function () {
-		$("#startButton").click(function(){
-			var img_src = "./images/board.png";
-			$("body").css("background-image", "url("+img_src+")");
-			$("body").css("background-repeat", "no-repeat");
-			$("body").css("background-position", "center");
-			$("header").show();
-			$("#wrapper").show();
-			$("#init").hide();
-			document.getElementById("board").style.display = "block";
-			app.init("board", true);
-		});
-	};
-</script>
 </body>
 </html>
