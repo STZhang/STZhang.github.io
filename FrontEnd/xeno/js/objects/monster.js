@@ -101,6 +101,7 @@ app.todo.push(function (env) {
 		 * @param tank {Element} 对应的建筑（武器）
 		 */
 		beKilled: function (tank) {
+
 			switch(this.pic)
 			{
 			case 1:				
@@ -211,6 +212,8 @@ app.todo.push(function (env) {
 					var audio = document.getElementById("lose"); 
 					audio.play();
 				} else {	
+					var audio = document.getElementById("Crash"); 
+					audio.play();					
 					switch(this.pic)
 					{
 					case 1:				
@@ -394,6 +397,20 @@ app.todo.push(function (env) {
 			}
 			if (!this.next_grid) {
 				this.getNextGrid();
+				/**
+				 * 如果依旧找不着下一步可去的格子，说明当前怪物被阻塞了
+				 */
+				if (!this.next_grid) {
+					this.beBlocked();
+					return;
+				}
+			}
+
+			if (this.cx == this.next_grid.cx && this.cy == this.next_grid.cy) {
+				this.arrive();
+			} else {
+				// 移动到 next grid
+
 				switch(this.pic)
 				{
 				case 1:				
@@ -453,20 +470,6 @@ app.todo.push(function (env) {
 					audio.play();
 					break;	
 				}
-				/**
-				 * 如果依旧找不着下一步可去的格子，说明当前怪物被阻塞了
-				 */
-				if (!this.next_grid) {
-					this.beBlocked();
-					return;
-				}
-			}
-
-			if (this.cx == this.next_grid.cx && this.cy == this.next_grid.cy) {
-				this.arrive();
-			} else {
-				// 移动到 next grid
-
 				var dpx = this.next_grid.cx - this.cx,
 					dpy = this.next_grid.cy - this.cy,
 					sx = dpx < 0 ? -1 : 1,
