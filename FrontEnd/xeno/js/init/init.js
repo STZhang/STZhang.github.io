@@ -9,7 +9,14 @@ window.onload = function () {
 		$("header").show();
 		$("#wrapper").show();
 		$("#init").hide();
-		$("#BGMusic").src = "./music/BGMusic01.mp3";
+		$("#BGMusic").remove();
+		var audio_node = document.createElement("audio");
+		audio_node.setAttribute("src","./music/BGMusic01.mp3");
+		audio_node.setAttribute("id","BGMusic");
+		audio_node.setAttribute("loop","loop");
+		document.body.appendChild(audio_node);
+		var audio = document.getElementById("BGMusic"); 
+		audio.play();
 		document.getElementById("board").style.display = "block";
 		app.init("board", true);
 	});
