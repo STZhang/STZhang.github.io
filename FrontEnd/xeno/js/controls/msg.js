@@ -23,6 +23,7 @@ app.todo.push(function (env) {
 		"tank_name_wall": "路障",
 		"tank_name_cannon": "炮台",
 		"tank_name_LMG": "轻机枪",
+		"tank_name_HMG": "重机枪",
 		"tank_name_frozen": "冰冻枪",
 		"tank_name_ball": "晕眩球",
 		"tank_name_laser_gun": "激光炮",
