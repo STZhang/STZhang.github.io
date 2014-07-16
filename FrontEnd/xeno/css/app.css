@@ -41,7 +41,7 @@ border: solid 1px #cdf;
 	-webkit-animation: wordtransfer 3s linear infinite 0s;
 }
 
-#init li{
+.blueButton{
 	-webkit-animation-name: blueButton;
 	-webkit-animation-duration: 4s;
 	-webkit-animation-iteration-count: infinite;
@@ -73,9 +73,27 @@ border: solid 1px #cdf;
 }
 
 
-#init li:hover{
+.blueButton:hover{
 	-webkit-animation:bg .5s ease-in-out;
 }
+
+.info{
+	display: none;
+}
+
+ol{
+	font-family: 微软雅黑;
+	color:white;
+    width: 80%;
+    padding-left: 15%;
+    text-align: left;
+}
+
+ol li{
+    padding-bottom: 40px;
+	font-size: 20px;
+}
+
 
 @-webkit-keyframes wordtransfer
 {

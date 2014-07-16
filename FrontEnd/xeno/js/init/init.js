@@ -20,4 +20,12 @@ window.onload = function () {
 		document.getElementById("board").style.display = "block";
 		app.init("board", true);
 	});
+	$("#helpButton").click(function(){
+		$(".info").fadeIn();
+		$("#button").hide();
+	});	
+	$("#returnButton").click(function(){
+		$(".info").hide();
+		$("#button").fadeIn();
+	});		
 };
