@@ -72,6 +72,11 @@ border: solid 1px #cdf;
 	margin-right: 48%;
 }
 
+
+#init li:hover{
+	-webkit-animation:bg .5s ease-in-out;
+}
+
 @-webkit-keyframes wordtransfer
 {
 0%   {	    
@@ -95,4 +100,12 @@ border: solid 1px #cdf;
   0% { background-color: #238896; -webkit-box-shadow: 0 0 9px #333; }
   24% { background-color: rgb(110, 210, 230); -webkit-box-shadow: 0 0 18px rgb(110, 210, 230); }
   100% { background-color: #238896; -webkit-box-shadow: 0 0 9px #333; }
+}
+
+ @-webkit-keyframes bg{
+ 	0%{background-color: #238896; -webkit-box-shadow: 0 0 9px #333;}
+    25%{background-color: rgb(110, 210, 230); -webkit-box-shadow: 0 0 18px rgb(110, 210, 230);}
+    50%{background:#238896; -webkit-box-shadow: 0 0 9px #333;}
+    75%{background-color: rgb(110, 210, 230); -webkit-box-shadow: 0 0 18px rgb(110, 210, 230);}
+    100%{background:#238896; -webkit-box-shadow: 0 0 9px #333;}
 }
