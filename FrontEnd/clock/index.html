@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Learning base</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<link rel="stylesheet" href="main.css">
+<form></form>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="input.js"></script>
+<script>
+
+  var myDuration = 300;
+  var firstTime = true;
+  
+  var width = 300,
+  height = 200,
+  margin = 20,
+  radius = Math.min(width, height) / 2;
+  var color = d3.scaleOrdinal(d3.schemeCategory20);
+  var pie = d3.pie()
+  .value(function(d) { return d.count; })
+  .sort(null);
+  var current_index = 0;
+  var index_key = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+  var arc = d3.arc()
+  .innerRadius(0)
+  .outerRadius(radius);
+
+  var BASE = 8.0;
+
+  input = generateInput(BASE)
+
+  var svg = d3.select("body").selectAll("svg")
+    .data(input)
+    .enter().append("svg")
+    .attr("width", width + margin)
+    .attr("height", height + margin * 2)
+    .append("g")
+    .attr("transform", "translate(" + (width / 2 + margin / 2) + "," + (height / 2 + margin) + ")");
+
+  function addTicks(base) {
+    var radians = 0.0174532925;  
+
+    svg.selectAll('.hour-label')
+    .data(generateLabel(base))
+      .enter()
+      .append('text')
+      .attr('class', 'hour-label')
+      .attr('text-anchor','middle')
+      .attr('x',function(d){                
+        var x = (radius+10) * Math.sin(d * 360.0 / base * radians);
+        return x;
+      })
+      .attr('y',function(d){
+        var y = -(radius+10) * Math.cos(d * 360.0 / base * radians);
+        return y+5;
+      })
+      .text(function(d){
+        return d;
+      });
+    }
+
+  function graph(data) {
+    function goBackByOne() {
+      var obj = {};
+      if (current_index == 0) {         
+        current_index = BASE;
+        obj["key"] = index_key[current_index];
+        obj["values"] = [data[current_index*2], data[current_index*2+1]];
+        change(obj);
+        setTimeout(function(){            
+          current_index = (current_index + BASE - 1) % BASE;
+          obj["key"] = index_key[current_index];
+          obj["values"] = [data[current_index*2], data[current_index*2+1]];
+          change(obj);
+        }, myDuration + 10);
+      } else {          
+        current_index = (current_index + BASE - 1) % BASE;
+        obj["key"] = index_key[current_index];
+        obj["values"] = [data[current_index*2], data[current_index*2+1]];
+        change(obj);
+      }      
+    }
+
+    function incrementByOne() {
+      var obj = {};
+      current_index = (current_index + 1);
+      obj["key"] = index_key[current_index];
+      obj["values"] = [data[current_index*2], data[current_index*2+1]];
+      change(obj);
+      if (current_index == BASE) {
+        setTimeout(function(){            
+          current_index = 0;
+          obj["key"] = index_key[current_index];
+          obj["values"] = [data[current_index*2], data[current_index*2+1]];
+          change(obj);
+        }, myDuration + 10);
+      }
+    }
+
+    function switchToIndex(index) {
+      var obj = {};
+      current_index = index;
+      obj["key"] = index_key[current_index];
+      obj["values"] = [data[current_index*2], data[current_index*2+1]];
+      change(obj);
+    }
+
+    function setdrag() {
+      var drag = d3.drag()
+        .subject(function(d) { return d; })
+        .on("start", dragstarted)
+        .on("drag", dragged)
+        .on("end", dragended);
+
+      var center = {};
+      center.x = (width+margin) / 2;
+      center.y = (height + margin * 2) / 2;
+
+      var start = {};
+      start.x = center.x;
+      start.y = 0;
+
+      // point1: start point, point2: center, point3: end point
+      function getAngle(point1, point2, point3) {
+          var bb = (point2.y - point1.y)*(point2.y - point1.y) + (point2.x - point1.x)*(point2.x - point1.x);
+          var aa = (point3.y - point1.y)*(point3.y - point1.y) + (point3.x - point1.x)*(point3.x - point1.x);
+          var cc = (point3.y - point2.y)*(point3.y - point2.y) + (point3.x - point2.x)*(point3.x - point2.x);
+          var cosa = (bb + cc - aa)/(2*Math.sqrt(bb)*Math.sqrt(cc));
+          return Math.acos(cosa);
+      }
+
+      // point1: center, point2: start, point3: center
+      function duration(point1, point2, point3) {
+          var sp = (point1.x-point3.x)*(point2.y-point3.y)-(point1.y-point3.y)*(point2.x-point3.x);
+          if(sp > 0) { // clockwise
+              return 1;
+          } else if(sp < 0) {// counter clockwise
+              return -1;
+          } else {
+              return 0;
+          }
+      }
+
+      function dragstarted(d) {
+        d3.event.sourceEvent.stopPropagation();
+        d3.select(this).classed("dragging", true);
+      }
+
+      function dragged(d) {
+        function toDegrees (angle) {
+          return angle * (180 / Math.PI);
+        }
+
+        var angle = getAngle(start, center, d3.event);
+        degree = toDegrees(angle);
+        if (d3.event.x < center.x) {
+          degree = 360 - degree;
+        } 
+        var index = degree * 1.0 / (360.0 / BASE);
+        switchToIndex(Math.round(index));
+      }
+
+      function dragended(d) {
+        d3.select(this).classed("dragging", false);
+      }
+
+      return drag;  
+    };
+
+    var drag = setdrag();
+    svg.call(drag);
+
+    var regionsByFruit = d3.nest()
+    .key(function(d) { return d.fruit; })
+    .entries(data);
+
+    var label = d3.select("form").selectAll("label")
+    .data(regionsByFruit)
+    .enter().append("label");
+
+    label.append("input")
+    .attr("type", "radio")
+    .attr("name", "fruit")
+    .attr("value", function(d) { return d.key; })
+    .on("change", change)
+    .filter(function(d, i) { return !i; })
+    .each(change)
+    .property("checked", true);
+
+    label.append("span")
+    .text(function(d) { return d.key; });
+
+    d3.select("body")
+    .on("keydown", function() { 
+      if (d3.event.keyCode == '37') {
+        // left arrow
+        goBackByOne();
+      } else if (d3.event.keyCode == '38') {
+        // up arrow
+
+      } else if (d3.event.keyCode == '39') {
+        // right arrow
+        incrementByOne();
+      } else if (d3.event.keyCode == '40') {
+        // down arrow
+        
+      }
+    });
+
+    function change(region, i, j) {
+      if (i === undefined || i === 0) {
+        var path = svg.selectAll("path");
+      }
+      var data0 = path.data(),
+      data1 = pie(region.values);
+      path = path.data(data1, key);
+
+      path
+      .transition()
+      .duration(myDuration)
+      .attrTween("d", arcTween)
+
+      path
+      .enter()
+      .append("path")
+      .each(function(d, i) {
+        var narc = findNeighborArc(i, data0, data1, key) ;
+        if(narc) {          
+          this._current = narc;
+          this._previous = narc;
+        } else {          
+          this._current = d;
+        }
+      }) 
+      .attr("fill", function(d,i) { 
+       return color(d.data.region)
+     })
+      .transition()
+      .duration(myDuration)
+      .attrTween("d", arcTween)
+
+
+      path
+      .exit()
+      .transition()
+      .duration(myDuration)
+      .attrTween("d", function(d, index) {
+
+        var currentIndex = this._previous.data.region;
+        var i = d3.interpolateObject(d,this._previous);
+        return function(t) {
+          return arc(i(t))
+        }
+
+      })
+      .remove()
+
+
+      firstTime = false;
+
+
+    }
+  }
+
+  function key(d) {
+    return d.data.region;
+  }
+
+  function type(d) {
+    d.count = +d.count;
+    return d;
+  }
+
+  function findNeighborArc(i, data0, data1, key) {
+    var d;
+    if(d = findPreceding(i, data0, data1, key)) {
+
+      var obj = cloneObj(d)
+      obj.startAngle = d.endAngle;
+      return obj;
+
+    } else if(d = findFollowing(i, data0, data1, key)) {
+
+      var obj = cloneObj(d)
+      obj.endAngle = d.startAngle;
+      return obj;
+
+    }
+
+    return null
+
+
+  }
+
+  addTicks(BASE);
+  
+  graph(input[0]);
+
+// Find the element in data0 that joins the highest preceding element in data1.
+function findPreceding(i, data0, data1, key) {
+  var m = data0.length;
+  while (--i >= 0) {
+    var k = key(data1[i]);
+    for (var j = 0; j < m; ++j) {
+      if (key(data0[j]) === k) return data0[j];
+    }
+  }
+}
+
+// Find the element in data0 that joins the lowest following element in data1.
+function findFollowing(i, data0, data1, key) {
+  var n = data1.length, m = data0.length;
+  while (++i < n) {
+    var k = key(data1[i]);
+    for (var j = 0; j < m; ++j) {
+      if (key(data0[j]) === k) return data0[j];
+    }
+  }
+}
+
+function arcTween(d) {
+
+  var i = d3.interpolate(this._current, d);
+
+  this._current = i(0);
+
+  return function(t) {
+    return arc(i(t))
+  }
+
+}
+
+
+function cloneObj(obj) {
+  var o = {};
+  for(var i in obj) {
+    o[i] = obj[i];
+  }
+  return o;
+}
+</script>
+</head>
+
+<body>
+  <div class="row">
+    <div class="col-md-4" id="clock1"></div>
+    <div class="col-md-4" id="clock2"></div>
+    <div class="col-md-4" id="clock3"></div>
+  </div>
+</body>
+
+</html>
