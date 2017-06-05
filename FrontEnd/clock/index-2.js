@@ -19,5 +19,8 @@ jQuery.each(array, function(index) {
 		$(current).removeClass("selected");
 	}
 	$(id).addClass("selected");
+	$("#tick1").text((array[index]*array[index]).toString());
+	$("#tick2").text(array[index].toString());
+	$("#tick3").text("1");
   });
 });

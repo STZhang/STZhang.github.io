@@ -30,7 +30,7 @@ graph(input[0], input[0][0], "0", BASE[0], false);
 graph(input[0], input[0][0], "1", BASE[0], false);
 graph(input[0], input[0][0], "2", BASE[0], false);
 setText("#clock-1-0", "1-0-total", 0, ["0 hours", "0 minutes", "0 seconds"]);
-setText("#clock-1-1", "1-1-total", 0, ["0 hours", "0 minutes", "0 seconds"], ["0 × 60\u00B2", "0 × 60\u00B9", "0 × 60\u2070"]);
+setText("#clock-1-1", "1-1-total", 0, ["0 hours", "0 minutes", "0 seconds"], ["0 × 60\u00B2 seconds", "0 × 60\u00B9 seconds", "0 × 60\u2070 seconds"]);
 setBackground(current_clock);
 
 input[1] = generateInput(BASE[1]);
@@ -113,9 +113,9 @@ function uparrowFunc() {
       current_index[1].toString() + " minutes",
       current_index[2].toString() + " seconds",
     ], [
-      current_index[0].toString() + " × 60\u00B2",
-      current_index[1].toString() + " × 60\u00B9",
-      current_index[2].toString() + " × 60\u2070",
+      current_index[0].toString() + " × 60\u00B2 seconds",
+      current_index[1].toString() + " × 60\u00B9 seconds",
+      current_index[2].toString() + " × 60\u2070 seconds",
     ]);
     setText("#clock-1-2", "1-2-total", 3, [
       current_index[3].toString() + " hundreds  ",
@@ -208,9 +208,9 @@ d3.select("body")
         current_index[1].toString() + " minutes",
         current_index[2].toString() + " seconds",
       ], [
-        current_index[0].toString() + " × 60\u00B2",
-        current_index[1].toString() + " × 60\u00B9",
-        current_index[2].toString() + " × 60\u2070",
+        current_index[0].toString() + " × 60\u00B2 seconds",
+        current_index[1].toString() + " × 60\u00B9 seconds",
+        current_index[2].toString() + " × 60\u2070 seconds",
       ]);
       setText("#clock-1-2", "1-2-total", 3, [
         current_index[3].toString() + " hundreds  ",
