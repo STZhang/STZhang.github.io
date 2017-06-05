@@ -65,3 +65,22 @@ function fourthRow() {
 	document.getElementById("link").style.color = "#265649";
 	document.getElementById("rightpiece").style.color = "#2EC186";
 }
+
+var modal = document.getElementById('myModal');
+var popup = document.getElementById('rightpiece');
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+popup.onclick = function() {
+    modal.style.display = "block";
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}

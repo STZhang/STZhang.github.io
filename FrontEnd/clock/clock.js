@@ -75,6 +75,48 @@ d3.select("body").on('keyup', function() {
     }
 });
 
+function updateAllText() {
+  setText("#clock-1-0", "1-0-total", 0, [
+    current_index[0].toString() + " hours  ",
+    current_index[1].toString() + " minutes",
+    current_index[2].toString() + " seconds",
+  ]);
+  setText("#clock-1-1", "1-1-total", 0, [
+    current_index[0].toString() + " hours  ",
+    current_index[1].toString() + " minutes",
+    current_index[2].toString() + " seconds",
+  ], [
+    current_index[0].toString() + " × 60\u00B2 seconds",
+    current_index[1].toString() + " × 60\u00B9 seconds",
+    current_index[2].toString() + " × 60\u2070 seconds",
+  ]);
+  setText("#clock-1-2", "1-2-total", 3, [
+    current_index[3].toString() + " hundreds  ",
+    current_index[4].toString() + " tens",
+    current_index[5].toString() + " ones",
+  ], [
+    current_index[3].toString() + " × 10\u00B2",
+    current_index[4].toString() + " × 10\u00B9",
+    current_index[5].toString() + " × 10\u2070",
+  ]);
+  current_base = Math.floor(BASE[2]).toString();
+  setText("#clock-2-0", "2-0-total", 6, [
+    current_index[6].toString() + " × " + current_base + "\u00B2",
+    current_index[7].toString() + " × " + current_base + "\u00B9",
+    current_index[8].toString() + " × " + current_base + "\u2070",
+  ]);
+  setText("#clock-4-0", "4-0-total", 9, [
+    current_index[9], current_index[10], current_index[11]
+  ], undefined, 10);
+  var total = document.getElementById("4-0-notation");
+  if (total) {
+    total.innerHTML = "<b>" + current_index[9].toString()
+      + current_index[10].toString() + current_index[11].toString()
+      + "<sub>" + BASE[3] + "</sub>"
+  }
+  checkCorrectness();
+}
+
 function uparrowFunc() {
   var current_set = Math.floor(current_clock / 3);
   var base = BASE[current_set];
@@ -88,60 +130,25 @@ function uparrowFunc() {
   var selected = "#clock" + current_clock.toString();
   var svg = d3.selectAll(selected).selectAll("svg");
   incrementByOne(svg, input[current_set][0], current_clock);
+  updateAllText();
   setTimeout(function(){            
     if (current_index[current_clock] === 0) {
       if (current_clock !== current_set*3) {
         selected = "#clock" + (current_clock-1).toString();
         svg = d3.select(selected).selectAll("svg");
         incrementByOne(svg, input[current_set][0], current_clock-1);
+        updateAllText();
         setTimeout(function(){                      
           if (current_index[current_clock-1] === 0 && current_clock !== current_set*3+1) {
             selected = "#clock" + (current_clock-2).toString();
             svg = d3.select(selected).selectAll("svg");
             incrementByOne(svg, input[current_set][0], current_clock-2);
+            updateAllText
           }
         }, myDuration*2 + 25);
       }
     }
-    setText("#clock-1-0", "1-0-total", 0, [
-      current_index[0].toString() + " hours  ",
-      current_index[1].toString() + " minutes",
-      current_index[2].toString() + " seconds",
-    ]);
-    setText("#clock-1-1", "1-1-total", 0, [
-      current_index[0].toString() + " hours  ",
-      current_index[1].toString() + " minutes",
-      current_index[2].toString() + " seconds",
-    ], [
-      current_index[0].toString() + " × 60\u00B2 seconds",
-      current_index[1].toString() + " × 60\u00B9 seconds",
-      current_index[2].toString() + " × 60\u2070 seconds",
-    ]);
-    setText("#clock-1-2", "1-2-total", 3, [
-      current_index[3].toString() + " hundreds  ",
-      current_index[4].toString() + " tens",
-      current_index[5].toString() + " ones",
-    ], [
-      current_index[3].toString() + " × 10\u00B2",
-      current_index[4].toString() + " × 10\u00B9",
-      current_index[5].toString() + " × 10\u2070",
-    ]);
-    current_base = Math.floor(BASE[2]).toString();
-    setText("#clock-2-0", "2-0-total", 6, [
-      current_index[6].toString() + " × " + current_base + "\u00B2",
-      current_index[7].toString() + " × " + current_base + "\u00B9",
-      current_index[8].toString() + " × " + current_base + "\u2070",
-    ]);
-    setText("#clock-4-0", "4-0-total", 9, [
-      current_index[9], current_index[10], current_index[11]
-    ], undefined, 10);
-    var total = document.getElementById("4-0-notation");
-    if (total) {
-      total.innerHTML = "<b>" + current_index[9].toString()
-        + current_index[10].toString() + current_index[11].toString()
-        + "<sub>" + BASE[3] + "</sub>"
-    }
-    checkCorrectness();
+    updateAllText();
   }, myDuration*2 + 25);  
 }
 
@@ -183,59 +190,25 @@ d3.select("body")
     var selected = "#clock" + current_clock.toString();
     var svg = d3.selectAll(selected).selectAll("svg");
     goBackByOne(svg, input[current_set][0], current_clock);
+    updateAllText();
     setTimeout(function(){
       if (current_index[current_clock] == BASE[current_set]-1){
         if (current_clock !== current_set*3) {
           selected = "#clock" + (current_clock-1).toString();
           svg = d3.select(selected).selectAll("svg");
           goBackByOne(svg, input[current_set][0], current_clock-1);
+          updateAllText();
           setTimeout(function(){                      
             if (current_index[current_clock-1] === BASE[current_set]-1 && current_clock !== current_set*3+1) {
               selected = "#clock" + (current_clock-2).toString();
               svg = d3.select(selected).selectAll("svg");
               goBackByOne(svg, input[current_set][0], current_clock-2);
+              updateAllText();
             }
           }, myDuration*2 + 25);
         }
-      } 
-      setText("#clock-1-0", "1-0-total", 0, [
-        current_index[0].toString() + " hours  ",
-        current_index[1].toString() + " minutes",
-        current_index[2].toString() + " seconds",
-      ]);
-      setText("#clock-1-1", "1-1-total", 0, [
-        current_index[0].toString() + " hours  ",
-        current_index[1].toString() + " minutes",
-        current_index[2].toString() + " seconds",
-      ], [
-        current_index[0].toString() + " × 60\u00B2 seconds",
-        current_index[1].toString() + " × 60\u00B9 seconds",
-        current_index[2].toString() + " × 60\u2070 seconds",
-      ]);
-      setText("#clock-1-2", "1-2-total", 3, [
-        current_index[3].toString() + " hundreds  ",
-        current_index[4].toString() + " tens",
-        current_index[5].toString() + " ones",
-      ], [
-        current_index[3].toString() + " × 10\u00B2",
-        current_index[4].toString() + " × 10\u00B9",
-        current_index[5].toString() + " × 10\u2070",
-      ]);
-      current_base = Math.floor(BASE[2]).toString();
-      setText("#clock-2-0", "2-0-total", 6, [
-        current_index[6].toString() + " × " + current_base + "\u00B2",
-        current_index[7].toString() + " × " + current_base + "\u00B9",
-        current_index[8].toString() + " × " + current_base + "\u2070",
-      ]);
-      setText("#clock-4-0", "4-0-total", 9, [
-        current_index[9], current_index[10], current_index[11]
-      ], undefined, 10);
-      var total = document.getElementById("4-0-notation");
-      if (total) {
-        total.innerHTML = "<b>" + current_index[9].toString()
-          + current_index[10].toString() + current_index[11].toString()
-          + "<sub>" + BASE[3] + "</sub>"
       }
+      updateAllText();
       checkCorrectness();
     }, myDuration*2 + 25);
   }

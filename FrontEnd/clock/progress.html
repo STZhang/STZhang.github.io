@@ -7,7 +7,6 @@
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway" />
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quicksand" />
 <link rel="stylesheet" href="progress.css">
-<script src="progress.js"></script>
 </head>
 
 <body>
@@ -25,7 +24,12 @@
     		<h1 class="title">Presentation</h1>
     		<div id="content2.1" class="content">
                 <p>
-    			See our live interactive explanation here: <a href="https://stzhang.github.io/FrontEnd/clock/index.html">Learning Bases</a></p>
+    			See our live interactive explanation here: <a href="https://stzhang.github.io/FrontEnd/clock/index.html" style="color:#2EC186;">Learning Bases </a></p>
+
+                <p>
+                Download our poster here: <a href="Poster.png" download>
+                <img border="0" src="Poster.png" width="100%">
+                </a></p>
                 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     		</div>
     	</div>
@@ -61,18 +65,18 @@
                 Interaction: Users can interact with the circles to explore numbers represented in base notation.<br/><br/>
 
                 </p>
-                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     		</div>
     	</div>
     	<div id="col2.4" class="col-md-3 wrapper" onmouseover="fourthRow()">
     		<div id="rightpiece" class="firstrow">
-				Why do all numbers grow from rignt to left on our website?
+				Why do all numbers grow from right to left on our website?
 			</div>
             <div class="firstrow"></div>
     		<h1 class="title">Needfinding</h1>
     		<div id="content2.4" class="content">
     			<p>
-    Our target users are young individuals, including high school and college students, who are looking for a quick and easy introduction to bases. Students typically encounter bases in school when they are instructed to learn about the topic, or when they are learning another concept that requires a prior understanding of bases. These are individuals looking for a surface-level introduction to bases. <br/>
+    Our target users are young individuals, including high school and college students, who are looking for a quick and easy introduction to bases. Students typically encounter bases in school when they are instructed to learn about the topic, or when they are learning another concept that requires a prior understanding of bases. These are individuals looking for a surface-level introduction to bases. <br/><br/>
     
     Our tutorial aims to shine a light on our users’ prior familiarity with bases (e.g. minutes and hours in base 60) and to leverage this existing knowledge to (1) give them an introduction to bases, and (2) introduce them to some of the other uses and future concepts in the field. Given our users’ limited time constraints, we want our user to google “bases”, click on the first link in the results (our interactive tutorial), and learn everything they need to know about bases through our tutorial. Our tutorial should provide enough information to assist our users in performing their work. Our tutorial should also provide enough additional information to pique their interest in learning more about bases, whether immediately or in the future.
                 </p>
@@ -81,4 +85,17 @@
     	</div>
         </div>
     </span>
+    <div id="myModal" class="modal">
+
+  <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+          <p>Note that in the number system, the right most digit always represents 1. And as we show in the tutoril, when filling up and carrying over, numbers also grow from right to left despite which base it is in.</p>
+        </div>
+        </div>
+    </div>
+    <script src="progress.js"></script>
 </body>
