@@ -122,7 +122,11 @@ body {
     color: white;
 }
 
-.modal-body {padding: 2px 16px;}
+.modal-body {
+    padding: 2px 16px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 
 .modal-footer {
     padding: 2px 16px;
