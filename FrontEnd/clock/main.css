@@ -26,3 +26,7 @@ label {
 .hour-label {
   font-size: 16px;
 }
+
+.notation {
+  text-align: center;
+}

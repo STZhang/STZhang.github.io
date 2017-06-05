@@ -1,0 +1,62 @@
+body {
+	background: linear-gradient(to bottom, #9ab3ac , #d0f8e8);
+	overflow-x: visible;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.title {
+	margin: 20px;
+	margin-bottom: 40px;
+	font-family: Quicksand;
+	font-size: 24px;
+	font-weight: 400;
+	color: #ffffff;
+}
+
+.firstrow {
+	height: 30px;
+	margin: 20px;
+	margin-top: 20px;
+	margin-bottom: 60px;
+	font-family: 'Raleway';
+	font-size: 16px;
+	color: #265649;
+	font-weight: 600;
+}
+
+.content {
+	margin: 20px;
+	margin-top: 40px;
+	margin-bottom: 100px;
+	font-family: 'Raleway';
+	font-size: 16px;
+	color: #ffffff;	
+	height: 100%;
+	position: relative;
+}
+
+.wrapper {
+  position: relative;
+  height: 100%;
+}
+
+.numbers {
+	position: fixed;
+	top: 83%;
+	text-align: center;
+	width: 100%;
+	font-family: Quicksand;
+	font-size: 100px;
+	font-weight: 400;
+	color: #ffffff;
+	z-index: 10;
+}
+
+#rightpiece {
+	text-align: right;
+	z-index: 10;
+	overflow-x: visible;
+	position: fixed;
+}

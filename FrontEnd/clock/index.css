@@ -1,0 +1,226 @@
+.rightcol {
+  /* position: fixed;
+   top: 0%;
+   left: 0%; */
+   overflow:hidden;
+}
+
+.leftcol {
+   /* border:solid 1px red;
+   position: relative;
+   top: 0%;
+   left: 50%;  */
+   overflow: hidden;
+}
+
+.subsection {
+  overflow-y: scroll;
+  height: calc( 100vh - 220px );
+  height: -o-calc( 100vh - 220px ); /* opera */
+  height: -webkit-calc( 100vh - 220px ); /* google, safari */
+  height: -moz-calc( 100vh - 220px ); /* firefox */
+}
+
+.border-left {
+  margin-top: 40px;
+  margin-left: 60px;
+  margin-right: 30px;
+  height: 100%;
+}
+
+.border-right {
+   padding-top: 140px;
+   margin-right: 60px;
+   height: 100%;
+   background: white; /* For browsers that do not support gradients */
+   background: -webkit-linear-gradient(#9AB3AC, #D0F8E8); /* For Safari 5.1 to 6.0 */
+   background: -o-linear-gradient(#9AB3AC, #D0F8E8); /* For Opera 11.1 to 12.0 */
+   background: -moz-linear-gradient(#9AB3AC, #D0F8E8); /* For Firefox 3.6 to 15 */
+   background: linear-gradient(#9AB3AC, #D0F8E8); /* Standard syntax (must be last) */
+}
+
+.border-right h1 {
+  font-family: "Quicksand", Arial, Sans-serif;
+  font-size: 60px;
+  color: #FFFFFF;
+  margin-left: 20px;
+}
+
+.border-right h3 {
+  font-family: "Raleway", Arial, Sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #FFFFFF;
+  margin-left: 20px;
+  margin-top: 120px;
+}
+
+.section-header {
+   background: #525153;
+   font-family: "Quicksand", Arial, Sans-serif;
+   font-size: 35px;
+   color: #FFFFFF;
+   height: 80px;
+}
+
+.section-footer {
+  font-family: "Raleway", Arial, Sans-serif;
+  font-size: 20px;
+  color: #2EC186;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+.section-footer a {
+  color: #2EC186;
+}
+
+.subsection h2 {
+   font-family: "Open-Sans", Arial, Sans-serif;
+   font-size: 25px;
+   color: #728F87;
+   margin-top: 60px;
+   margin-bottom: 40px;
+   font-weight: 600;
+}
+
+.subsection p {
+  font-family: "Open-Sans", Arial, Sans-serif;
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.intro p {
+  margin-top: 20px;
+  border-left: solid #728F87;
+}
+
+.subsection {
+  padding: 30px;
+  padding-top: 0px;
+  background-color: white;
+}
+
+body, html {
+  width: 100%;
+  margin: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+    width: 100%;
+    min-height: 100%;
+    background: white; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#D3DDDA, #EBFCF6); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#D3DDDA, #EBFCF6); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#D3DDDA, #EBFCF6); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#D3DDDA, #EBFCF6); /* Standard syntax (must be last) */
+}
+
+.top-navigation {
+  font-family: "Quicksand", Arial, Sans-serif;
+  font-size: 100px;
+  color: #FFFFFF;  
+  margin-bottom: -37px;
+}
+
+.top-navigation a {
+  color: #FFFFFF;
+}
+
+.top-navigation a:hover{
+  color: #525153;
+  text-decoration: none;
+}
+
+.top-navigation .selected a{
+  color: #525153;
+}
+
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+h3 {
+  margin-top: 40px;
+}
+
+.title {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#progress-link {
+  font-family: "Raleway", Arial, Sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+#progress-link a {
+  color: #2EC186;
+}
+
+.divider {
+  border-top: solid 1px black;
+}
+
+.text1-1 p {
+  margin-top: 40px;
+  font-size: 15px;
+}
+
+.total {
+  margin: 20px;
+  margin-top: 60px;
+  margin-bottom: 100px;
+  font-family: "Open-Sans", Arial, Sans-serif;
+  font-weight: 600;
+  font-size: 20px; 
+}
+
+.right-descript {
+  float: right;
+}
+
+.center-descript {
+  margin:auto; 
+  display:table;
+  margin-top: 20px;
+}
+
+.base-selector span{
+  padding: 2px;
+  color: #2EC186;
+  border: solid 1px #FFFFFF;
+}
+
+.base-selector .selected, .base-selector span:hover {
+  padding: 2px;
+  border: solid 1px #2EC186;
+}
+
+.instructions {
+  background-color: #EBFCF6;
+}
+
+.instructions p{
+  font-size: 15px;
+}
+
+input {
+  padding: 4px;
+  border: solid 1px red;
+  width: 50px; 
+}
