@@ -61,6 +61,8 @@
    font-size: 35px;
    color: #FFFFFF;
    height: 80px;
+   z-index: 1;
+   position:relative;
 }
 
 .section-footer {
@@ -123,7 +125,8 @@ body, html {
   font-family: "Quicksand", Arial, Sans-serif;
   font-size: 100px;
   color: #FFFFFF;  
-  margin-bottom: -37.8px;
+  margin-bottom: -38px;
+  position:relative;
 }
 
 .top-navigation a {
@@ -216,6 +219,7 @@ h3 {
 }
 
 .instructions p{
+  margin-top: 40px; 
   font-size: 15px;
 }
 
@@ -223,4 +227,9 @@ input {
   padding: 4px;
   border: solid 1px red;
   width: 50px; 
+}
+
+img {
+  margin-left: 25px;
+  height: 150px;
 }

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="215px" height="215px" viewBox="0 0 215 215" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44 (41411) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-6.9%" y="-4.8%" width="113.1%" height="119.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <rect id="path-2" x="0" y="0" width="50" height="50" rx="4"></rect>
+        <rect id="path-3" x="0" y="0" width="50" height="50" rx="4"></rect>
+        <rect id="path-4" x="0" y="0" width="50" height="50" rx="4"></rect>
+        <rect id="path-5" x="0" y="0" width="50" height="50" rx="4"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard">
+            <g id="Arrows" filter="url(#filter-1)" transform="translate(28.000000, 55.000000)">
+                <g id="Up" transform="translate(55.000000, 0.000000)">
+                    <g id="Rectangle-3-Copy">
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                        <rect stroke="#000000" stroke-width="3" x="1.5" y="1.5" width="47" height="47" rx="4"></rect>
+                    </g>
+                    <polygon id="Triangle" fill="#000000" points="25.5 16 33 34 18 34"></polygon>
+                </g>
+                <g id="Down" transform="translate(80.000000, 80.000000) scale(1, -1) translate(-80.000000, -80.000000) translate(55.000000, 55.000000)">
+                    <g id="Rectangle-3-Copy">
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                        <rect stroke="#000000" stroke-width="3" x="1.5" y="1.5" width="47" height="47" rx="4"></rect>
+                    </g>
+                    <polygon id="Triangle" fill="#000000" points="25.5 16 33 34 18 34"></polygon>
+                </g>
+                <g id="Right" transform="translate(135.000000, 80.000000) rotate(90.000000) translate(-135.000000, -80.000000) translate(110.000000, 55.000000)">
+                    <g id="Rectangle-3-Copy">
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-4"></use>
+                        <rect stroke="#000000" stroke-width="3" x="1.5" y="1.5" width="47" height="47" rx="4"></rect>
+                    </g>
+                    <polygon id="Triangle" fill="#000000" points="25.5 16 33 34 18 34"></polygon>
+                </g>
+                <g id="Left" transform="translate(25.000000, 80.000000) rotate(270.000000) translate(-25.000000, -80.000000) translate(0.000000, 55.000000)">
+                    <g id="Rectangle-3-Copy">
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-5"></use>
+                        <rect stroke="#000000" stroke-width="3" x="1.5" y="1.5" width="47" height="47" rx="4"></rect>
+                    </g>
+                    <polygon id="Triangle" fill="#000000" points="25.5 16 33 34 18 34"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

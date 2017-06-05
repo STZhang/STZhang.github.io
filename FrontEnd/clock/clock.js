@@ -2,9 +2,9 @@
 var myDuration = 300;
 var firstTime = true;
 var flag = true,
-width = 150,
+width = 187,
 height = 250,
-margin = 30,
+margin = 80,
 border = 2,
 radius = Math.min(width, height) / 2;
 var color = d3.scaleOrdinal(d3.schemeCategory20);
@@ -290,9 +290,9 @@ function graph(input, data, index, BASE, flag) {
     .data(input)
     .enter().append("svg")
     .attr("width", width + margin * 2)
-    .attr("height", height + margin * 2)
+    .attr("height", height + margin)
     .append("g")
-    .attr("transform", "translate(" + (width / 2 + margin) + "," + (height / 2 + margin) + ")");
+    .attr("transform", "translate(" + (width / 2 + margin) + "," + (height / 2) + ")");
 
   var circle = svg.append("circle")
     .attr("cx", 0)
